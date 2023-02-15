@@ -1,7 +1,7 @@
 import telebot
 from telebot import types
 
-bot = telebot.TeleBot("5929465158:AAH7P_H0nXnwvx1DLgVtpAfg22FmsGA4T_s")
+bot = telebot.TeleBot("token")
 
 feedback = types.ReplyKeyboardMarkup(resize_keyboard=True)
 feedback.add(types.KeyboardButton("Обратная связь"))
@@ -18,7 +18,7 @@ def get_text_messages(message):
         bot.send_message(message.chat.id, 'Привет!', reply_markup=feedback)
     elif message.text == 'Обратная связь':
         reply = telebot.types.InlineKeyboardMarkup()
-        reply.add(telebot.types.InlineKeyboardButton(text='Связаться с Владимиром', callback_data='yes', url='https://t.me/vladnotbad'))
+        reply.add(telebot.types.InlineKeyboardButton(text='Связаться с Владимиром', callback_data='yes', url='ссылка на Владимира'))
         bot.reply_to(message, "Чтобы получить обратную связь, нажмите на кнопку под сообщением", reply_markup=reply)
     else:
         bot.send_message(message.chat.id, 'Извините, я не понимаю, о чем вы говорите. Нажмите на кнопку "Меню", чтобы воспользоваться функционалом бота', reply_markup=feedback)
