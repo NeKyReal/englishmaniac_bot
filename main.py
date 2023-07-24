@@ -27,7 +27,7 @@ def get_text_messages(message):
 @bot.callback_query_handler(func=lambda call: True)
 def get_feedback(call):
     if call.data == 'yes':
-        bot.send_message(457378203, 'Привет!', reply_markup=feedback)
+        bot.send_message('id', 'Привет!', reply_markup=feedback)
 
 
 @bot.message_handler(content_types=['document'])
